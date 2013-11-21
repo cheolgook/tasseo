@@ -3,6 +3,7 @@ require 'rack-ssl-enforcer'
 require 'haml'
 require 'json'
 require 'sinatra_auth_github'
+require 'net/http'
 
 module Tasseo
   class Web < Sinatra::Base
@@ -80,6 +81,16 @@ module Tasseo
     get '/health' do
       content_type :json
       {'status' => 'ok'}.to_json
+    end
+
+    get '/render*' do
+      url = URI.parse(ENV['GRAPHITE_HOME'].to_s+request.fullpath)
+      req = Net::HTTP::Get.new(url.request_uri);
+      res = Net::HTTP.start(url.host, url.port) {|http|
+        http.request(req)
+      }
+      content_type :json
+      res.body
     end
 
     get %r{/([\S]+)} do
