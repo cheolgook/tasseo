@@ -84,6 +84,7 @@ Dashboard-level attributes are top-level variables defined in your dashboard con
 * interpolation - Line smoothing method supported by D3. (optional, defaults to _step-after_)
 * renderer - Rendering method supported by D3. (optional, defaults to _area_)
 * stroke - Dictates whether stroke outline is shown or not. (optional, defaults to _true_)
+* min - Lower value on the Y-axis, or `auto` for the lowest value in the series. (optional, defaults to _0_)
 
 ### Metric Attributes
 
@@ -97,6 +98,7 @@ Metric-level attributes are attributes of the metric object(s) in your `metrics`
 * critical - Critical threshold. Exceeding this value causes the graph to turn red. (optional)
 * unit - Arbitrary string that can be used to designate a unit value; for example, "Mbps". (optional)
 * series - Name of the InfluxDB series that each target belongs to. (mandatory for InfluxDB)
+* ymin - Lower value on the Y-axis, or `auto` for the lowest value in the series. (optional, defaults to _0_)
 
 ## Deployment
 
