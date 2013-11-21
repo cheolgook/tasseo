@@ -1,6 +1,6 @@
 # Tasseo
 
-[![Build Status](https://secure.travis-ci.org/obfuscurity/tasseo.png)](http://travis-ci.org/obfuscurity/tasseo)
+[![Build Status](https://secure.travis-ci.org/cheolgook/tasseo.png)](http://travis-ci.org/cheolgook/tasseo)
 
 Reading the tea leaves.
 
